@@ -172,9 +172,6 @@ func Restart(appname string) {
 //Start start app
 func Start(appname string) {
 	log.Infof("Restarting %s ...\n", appname)
-	if strings.Index(appname, "./") == -1 {
-		appname = "./" + appname
-	}
 
 	cmd = exec.Command(appname)
 	cmd.Stdout = os.Stdout
